@@ -1,0 +1,44 @@
+.usercard {
+  width: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #50223C;
+  color: #F0DAC5;
+  padding: 1%;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(-40vh);
+  min-width: 250px;
+  width: 17vw;
+  flex: 1;
+  transition: ease-in-out 0.3s;
+}
+
+.usercard--show{
+    opacity: 1;
+    pointer-events: all;
+    border-radius: 6px;
+    box-shadow: 3px 4px 2px 2px rgba(0,0,0,0.4);
+}
+
+.userImage {
+  border: 1.6px solid #1C2340;
+  border-radius: 12px;
+  width: 40%;
+  height: auto;
+  position: relative;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.details button{
+    width: 50%;
+    text-overflow: clip;
+}
