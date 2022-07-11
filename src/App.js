@@ -14,9 +14,10 @@ function App() {
 ])
 
   const [isNotLogged,setIsNotLogged] = useState(true)
-  const [isNotSigned,setIsNotSigned] = useState(true)
+  const [isNotSigned,setIsNotSigned] = useState(false)
 
   const [logsin, setLogsin] = useState({mail: "", pass: ""})
+  const [sign, setSign] = useState({mail: "", pass: ""})
   
   const unlog=()=>{
     setIsNotLogged(prevState => !prevState);
@@ -26,16 +27,33 @@ function App() {
     setIsNotSigned(prevState => !prevState);
   }
 
-  // const signn=(mm,pp)>{
-  //   var xam={mail: "", pass: ""};
-
-  // }
+  const signS=(mm,pp)=>{
+    var controlUser={mail: mm, pass: pp};
+    for(var i=0; i< users.length; i++){
+      if(users[i].mail == mm){
+        alert("User already exists! Please Log in!");
+        return
+      }
+    }
+    // if(mm ){
+    // setUsers({...users, controlUser});
+    // alert("Succesfully signed up!");
+    // }
+    if(isNotLogged){
+      unlog();
+    }
+    unSign();
+    console.log(isNotSigned);
+  }
 
 const logg=(m,p)=>{
   for(var i=0; i< users.length; i++){
     if(users[i].mail == m && users[i].pass == p){
       setLogsin({mail: users[i].mail, pass: users[i].pass})
       alert("Succesfully logged in!");
+      if(isNotSigned){
+        unSign();
+      }
       unlog();
       console.log(isNotLogged);
       
@@ -43,14 +61,15 @@ const logg=(m,p)=>{
     }
     
   }
-  alert("This user is not found!");
-  // setLogsin({mail: "",pass: "" });
+  alert("This user is not found! Please sign up!");
+  setLogsin({mail: "",pass: "" });
 }
+  
 
   return (
     <>
-      <Login isNotLogged={isNotLogged} logg={logg}/>
-      <Signup isNotSigned={isNotSigned}/>
+      <Login isNotLogged={isNotLogged} unlog={unlog} logg={logg} unSign ={unSign} />
+      <Signup signS = {signS} unSign={unSign} unlog={unlog} isNotSigned={isNotSigned}/>
     </>
   );
 }

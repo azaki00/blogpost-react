@@ -10,10 +10,10 @@
     align-items: center;
     background-color: #CCD0D9;
     width: 20vw;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-radius: 10px;
     align-self: center;
     box-shadow: 3px 5px 3px 3px rgba(0,0,0,0.4);
+    transform:translateY(30%);
 }
 
 .login{
@@ -26,6 +26,8 @@
     text-align: center;
     opacity: 0;
     pointer-events: none; 
+    z-index: 1;
+    transition: ease-in 0.3s;
 }
 
 .login--show{
@@ -65,6 +67,8 @@
     outline: none;
     cursor: pointer; 
     transition: 0.4s;
+    border: 0;
+    box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.4);
 }
 
 .login button:hover{
@@ -73,5 +77,6 @@
 }
 
 .login fieldset button{
-    width: 5vw;
+    width: 7vw;
+    line-height: 2vh;
 }
