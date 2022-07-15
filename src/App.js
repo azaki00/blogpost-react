@@ -146,6 +146,17 @@ function App() {
     unPost();
   };
 
+  const filterID=() =>{
+    const newfil = [...posts].sort((a,b) => b.postID-a.postID)
+    setPosts(newfil);
+  }
+
+  const fl=() =>{
+    const contt = [...posts].sort((a,b) => b.likes-a.likes)
+    setPosts(contt);
+  }
+
+
   return (
     <>
       <Header />
@@ -169,6 +180,8 @@ function App() {
         addP={addP}
         unPost={unPost}
         isNotAddPost={isNotAddPost}
+        filterID={filterID}
+        fl={fl}
       />
     </>
   );

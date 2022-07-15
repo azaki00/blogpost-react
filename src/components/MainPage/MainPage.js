@@ -2,28 +2,31 @@ import React from "react";
 import "./mainpage.css";
 import UserCard from "../UserCard/UserCard";
 import Post from "../post/Post.js";
-import PostNav from "../postNav/PostNav";
+import Navbar from "../navbar/Navbar";
 import AddPost from "../post/AddPost";
 
-const MainPage = ({ showCard, userIn, posts, addP, unPost, isNotAddPost }) => {
-  const printPosts = (posts) => {
-    var x = { author: "", topic: "", body: "", postID: "" };
-    for (var i = 0; i < posts.length; i++) {
-      x.postID = posts[i].postID;
-      console.log(x.postID);
-    }
-  };
+const MainPage = ({ showCard, userIn, posts, addP, unPost, isNotAddPost, filterID, fl }) => {
+
+  // const printPosts = (posts) => {
+  //   var x = { author: "", topic: "", body: "", postID: "" };
+  //   for (var i = 0; i < posts.length; i++) {
+  //     x.postID = posts[i].postID;
+  //     console.log(x.postID);
+  //   }
+  // };
 
   return (
     <div className={`mainpage ${showCard ? "mainpage--show" : ""}`}>
+      
       <div className="cardCont">
         <UserCard userIn={userIn} />
+        <Navbar unPost={unPost} filterID={filterID} fl={fl}/>
       </div>
       <div className="postviewer">
-        <button onClick={unPost} style={{ alignSelf: "center" }}>
+        {/* <button onClick={unPost} style={{ alignSelf: "center" }}>
           {" "}
           Add Post
-        </button>
+        </button> */}
         <AddPost isNotAddPost={isNotAddPost} addP={addP}/>
         <span className="postviewerTitle">Posts Viewer</span>
         <div className="postGenerator">

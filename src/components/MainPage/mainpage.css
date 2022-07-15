@@ -16,12 +16,18 @@
 }
 
 .mainpage--show {
+  
   opacity: 1;
   pointer-events: all;
 }
 
 .cardCont {
   width: 25%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1%;
 }
 
 .postviewer {
@@ -30,6 +36,7 @@
   width: 70%;
   height: fit-content;
   border: 1px solid black;
+  /* transform: translateY(-20vh); */
 }
 
 .postGenerator {
@@ -62,6 +69,6 @@
     } */
 
   .postviewer {
-    transform: translateY(20vh);
+    /* transform: translateY(20vh); */
   }
 }

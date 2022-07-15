@@ -25,7 +25,7 @@ const AddPost = ({ isNotAddPost, addP }) => {
         <br />
         <label>Body</label>
         <br />
-        <input value={body} onChange={(e) => setBody(e.target.value)}></input>
+        <textarea className="bodyinput" value={body} onChange={(e) => setBody(e.target.value)}></textarea>
         <br /><br />
         <button className="btnn" onClick={meow} >
           Submit
