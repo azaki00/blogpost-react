@@ -4,9 +4,16 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.4s;
+  padding: 1%;
 }
 
 .addpost--show {
   opacity: 1;
   pointer-events: all;
+}
+.btnn{
+  background-color: #1c2340;
+  padding: 1%;
+  color:#f0dac5;
+  border-radius: 20px;
 }

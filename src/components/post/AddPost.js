@@ -8,11 +8,8 @@ const AddPost = ({ isNotAddPost, addP }) => {
 
   const meow = (e) => {
     e.preventDefault();
-    alert("test1");
     if (topic != "" && body != "") {
-      alert("test1.2");
       addP(topic, body );
-      alert("test5");
       setBody("");
       setTopic("");
       
@@ -29,7 +26,7 @@ const AddPost = ({ isNotAddPost, addP }) => {
         <label>Body</label>
         <br />
         <input value={body} onChange={(e) => setBody(e.target.value)}></input>
-        <br />
+        <br /><br />
         <button className="btnn" onClick={meow} >
           Submit
         </button>

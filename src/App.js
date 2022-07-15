@@ -125,20 +125,24 @@ function App() {
   };
 
   const addP = (x,y) => {
-    alert("test2");
-    console.log(x);
-    console.log(y);
+    // console.log(x);
+    // console.log(y);
     const id = Math.floor(Math.random() * 10000) + 1;
     const newpost = {
-      author: userIn,
+      author: userIn.mail,
       topic: x,
       body: y,
       postID: id,
       likes: 0,
     };
-    alert("test3");
+
+    // console.log(newpost.author);
+    // console.log(newpost.topic);
+    // console.log(newpost.body);
+    // console.log(newpost.postID);
+    // console.log(newpost.likes);
+
     setPosts([newpost, ...posts]);
-    alert("test4");
     unPost();
   };
 
