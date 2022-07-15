@@ -7,22 +7,16 @@
   color: #F0DAC5;
   padding: 1%;
   text-align: left;
-  opacity: 0;
-  pointer-events: none;
   position: absolute;
-  transform: translateY(-40vh);
+  margin: 10px;;
   min-width: 250px;
-  width: 17vw;
   flex: 1;
-  transition: ease-in-out 0.3s;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  opacity: 1;
 }
 
-.usercard--show{
-    opacity: 1;
-    pointer-events: all;
-    border-radius: 6px;
-    box-shadow: 3px 4px 2px 2px rgba(0,0,0,0.4);
-}
+
 
 .userImage {
   border: 1.6px solid #1C2340;

@@ -12,8 +12,9 @@
 }
 
 .btn1:hover {
+  font-weight: bold;
     color: #1C2340;
-  background-color: #F0DAC5;
+  background-color: #04C050;
 }
 
 .art2 {

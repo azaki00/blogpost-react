@@ -1,0 +1,44 @@
+.post {
+  padding: 1%;
+}
+
+.div1 {
+  color: #f0dac5;
+  background-color: #1c2340;
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.ID {
+  text-align: right;
+}
+
+.div2 {
+  padding: 2%;
+}
+
+.div2 span {
+  font-size: 1.4em;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+
+.likes {
+  padding: 0 1% 0 1%;
+  border-radius: 10px;
+  color: #f0dac5;
+  background-color: #1c2340;
+  width: fit-content;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  float: right;
+  transition: 0.4s;
+}
+
+.likes:hover {
+  background-color: #50223c;
+  cursor: pointer;
+}

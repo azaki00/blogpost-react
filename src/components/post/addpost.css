@@ -1,0 +1,12 @@
+.addpost {
+  background-color: #50223c;
+  color: #f0dac5;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+}
+
+.addpost--show {
+  opacity: 1;
+  pointer-events: all;
+}

@@ -1,0 +1,67 @@
+.mainpage {
+  border: 10px solid #1c2340;
+  border-radius: 10px;
+  width: 90%;
+  height: 70vh;
+  transform: translateY(-400px);
+  opacity: 0;
+  pointer-events: none;
+  transition: ease-in-out 0.3s;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-y: scroll;
+}
+
+.mainpage--show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cardCont {
+  width: 25%;
+}
+
+.postviewer {
+  margin-top: 10px;
+  margin-right: 10px;
+  width: 70%;
+  height: fit-content;
+  border: 1px solid black;
+}
+
+.postGenerator {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postviewerTitle {
+  text-transform: uppercase;
+  background-color: #50223c;
+  color: #f0dac5;
+  font-size: 2em;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 1180px) {
+  .mainpage {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* .cardCont{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    } */
+
+  .postviewer {
+    transform: translateY(20vh);
+  }
+}

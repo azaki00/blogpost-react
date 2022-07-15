@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.css";
 import { useState } from "react";
-import { UNSAFE_NavigationContext } from "react-router-dom";
+
 const Login = ({ logg, unlog, isNotLogged, unSign }) => {
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
