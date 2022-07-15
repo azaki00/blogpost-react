@@ -8,14 +8,14 @@ const AddPost = ({ isNotAddPost, addP }) => {
 
   const meow = (e) => {
     e.preventDefault();
-    alert("!!!!!!");
+    alert("test1");
     if (topic != "" && body != "") {
-      alert("onsubmt inside!");
+      alert("test1.2");
       addP(topic, body );
-      alert("onsubmt inside out!");
+      alert("test5");
       setBody("");
       setTopic("");
-      return
+      
     }
   };
 
