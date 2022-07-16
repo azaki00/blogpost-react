@@ -156,6 +156,13 @@ function App() {
     setPosts(contt);
   }
 
+  const logOut = () => {
+    const x = {mail: "", pass: ""};
+    setUserIn(x);
+    unCard();
+    unlog();
+  }
+
 
   return (
     <>
@@ -182,6 +189,7 @@ function App() {
         isNotAddPost={isNotAddPost}
         filterID={filterID}
         fl={fl}
+        logOut={logOut}
       />
     </>
   );

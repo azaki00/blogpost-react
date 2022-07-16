@@ -14,6 +14,9 @@ const AddPost = ({ isNotAddPost, addP }) => {
       setTopic("");
       
     }
+    // alert("You cant add a post with an empty field!");
+    // setBody("");
+    // setTopic("");
   };
 
   return (

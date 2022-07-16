@@ -5,7 +5,7 @@ import Post from "../post/Post.js";
 import Navbar from "../navbar/Navbar";
 import AddPost from "../post/AddPost";
 
-const MainPage = ({ showCard, userIn, posts, addP, unPost, isNotAddPost, filterID, fl }) => {
+const MainPage = ({ showCard, userIn, posts, addP, unPost, isNotAddPost, filterID, fl, logOut}) => {
 
   // const printPosts = (posts) => {
   //   var x = { author: "", topic: "", body: "", postID: "" };
@@ -20,7 +20,7 @@ const MainPage = ({ showCard, userIn, posts, addP, unPost, isNotAddPost, filterI
       
       <div className="cardCont">
         <UserCard userIn={userIn} />
-        <Navbar unPost={unPost} filterID={filterID} fl={fl}/>
+        <Navbar unPost={unPost} filterID={filterID} fl={fl} logOut={logOut}/>
       </div>
       <div className="postviewer">
         {/* <button onClick={unPost} style={{ alignSelf: "center" }}>

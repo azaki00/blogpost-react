@@ -45,7 +45,7 @@
     padding: 2%;
     align-items: center;
 }
-
+/* 
 .btn22{
     background-color: #50223c;
     color: #f0dac5;
@@ -61,12 +61,12 @@
     background-color: #f0dac5;
 }
 
-/* .b2{
+.b2{
     display: flex;
     justify-content: center;
     padding: 2%;
     align-items: center;
-} */
+}
 
 .btn33{
     background-color: #50223c;
@@ -81,11 +81,5 @@
 .btn33:hover{
     color: #50223c;
     background-color: #f0dac5;
-}
-
-/* .b2{
-    display: flex;
-    justify-content: center;
-    padding: 2%;
-    align-items: center;
 } */
+

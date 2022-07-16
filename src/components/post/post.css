@@ -12,7 +12,13 @@
 }
 
 .ID {
+  padding:1%;
+  border-radius: 10px;
+  font-weight: 900;
+  align-self: center;
   text-align: right;
+  background-color: #f0dac5;
+  color:#1c2340;
 }
 
 .div2 {

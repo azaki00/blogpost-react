@@ -12,14 +12,25 @@
   pointer-events: all;
 }
 .btnn{
-  background-color: #1c2340;
+  background-color: #f0dac5;
+  font-weight: 600;
+  color: #1c2340;
   padding: 1%;
-  color:#f0dac5;
   border-radius: 20px;
+  align-self: center;
+  border: 0;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.btnn:hover{
+  background-color: #1c2340;
+  color: #f0dac5;
 }
 
 .bodyinput{
-  width:100%;
+  width:95%;
   height: 100px;
   resize: none;
 }

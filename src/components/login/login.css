@@ -9,7 +9,7 @@
   padding-top: 0%;
   align-items: center;
   background-color: #1C2340;
-  width: 20vw;
+  width: 30vw;
   border-radius: 10px;
   align-self: center;
   /* box-shadow: 3px 5px 3px 3px rgba(0, 0, 0, 0.4); */
@@ -86,4 +86,13 @@
 .login fieldset button {
   width: 7vw;
   line-height: 2vh;
+}
+
+@media only screen and (max-width: 800px) {
+  .login{
+    width: 100%;
+  }
+  .form{
+    width: 50%;
+  }
 }
