@@ -5,6 +5,7 @@ import Signup from "./components/signup/Signup";
 import Header from "./components/Header";
 import MainPage from "./components/MainPage/MainPage";
 
+
 function App() {
   const [users, setUsers] = useState([
     { mail: "user@user", pass: "123" },
@@ -13,46 +14,47 @@ function App() {
     { mail: "user4@user", pass: "123456" },
   ]);
 
+  const [controlPost,setControlPost] = useState();
   const [posts, setPosts] = useState([
     {
       author: "x@x",
       topic: "qwerty",
-      body: "qwertyawegaweguiop",
+      body: "Sint aliquip aliqua commodo occaecat enim consectetur nisi voluptate sunt nisi culpa. Adipisicing quis mollit proident fugiat irure eiusmod anim est laborum ut Lorem dolore Lorem proident. Magna in nostrud ipsum nostrud velit excepteur Lorem voluptate. Velit occaecat magna consectetur sit pariatur mollit tempor.",
       postID: "7242",
       likes: "24",
     },
     {
       author: "x@2",
       topic: "qrt",
-      body: "awegwagargaethea",
+      body: "Adipisicing aliqua sint deserunt dolor in pariatur. Quis aliqua consequat dolor non et nulla aliquip do Lorem consequat ut do qui pariatur. Nisi id ad deserunt incididunt cillum. Ex consectetur et adipisicing officia commodo magna. Lorem mollit ipsum velit cupidatat velit irure in est tempor ad occaecat commodo ut. Adipisicing et eu duis cillum commodo commodo culpa adipisicing aliquip aliqua eiusmod et. Sint do magna Lorem voluptate amet do nisi deserunt sunt consectetur aliqua.",
       postID: "1363",
       likes: "100",
     },
     {
       author: "x@3",
       topic: "zxb",
-      body: "awrhawthagrww",
+      body: "Laboris tempor pariatur magna aliqua esse enim labore minim. Reprehenderit excepteur in occaecat est ullamco. Proident ipsum elit magna qui qui sunt. Ea excepteur cillum aliqua et duis.",
       postID: "1361",
       likes: "541",
     },
     {
       author: "x@4",
       topic: "rha",
-      body: "awraehebtsjndf",
+      body: "In velit duis est eiusmod deserunt pariatur id. Lorem veniam ipsum deserunt deserunt ea do deserunt excepteur dolor nulla dolore eu. Elit mollit elit ex pariatur eiusmod magna anim nisi.",
       postID: "3467",
       likes: "1361",
     },
     {
       author: "x@5",
       topic: "ar",
-      body: "etheahadrwah",
+      body: "Sunt voluptate proident eu labore ad eu culpa elit. Ea commodo Lorem aliquip officia quis ad consectetur nisi eiusmod pariatur dolor. Dolore sit excepteur cupidatat minim aute commodo incididunt ut deserunt irure est anim. In voluptate amet sunt occaecat. Est minim dolore elit sunt in tempor ipsum ex laboris deserunt laboris.",
       postID: "7353",
       likes: "145",
     },
     {
       author: "x@6",
       topic: "awrwhar",
-      body: "aerhawrhawrgth",
+      body: "Ad aute in pariatur esse pariatur minim velit pariatur minim eu. Est nostrud fugiat veniam proident pariatur in. Elit duis dolore sunt quis id reprehenderit incididunt cupidatat sit magna et. Lorem velit cillum non minim incididunt. Dolor excepteur qui aliquip excepteur ea non sint aliquip.",
       postID: "8235",
       likes: "10",
     },
@@ -163,6 +165,18 @@ function App() {
     unlog();
   }
 
+  const searchID=(id)=>{
+    setControlPost(posts);
+    setPosts(posts.filter(man => man.postID == id));
+  }
+
+  const refresh=()=>{
+    if(controlPost != null){
+      setControlPost(null);
+      setPosts(controlPost);
+    }
+  }
+
 
   return (
     <>
@@ -190,6 +204,8 @@ function App() {
         filterID={filterID}
         fl={fl}
         logOut={logOut}
+        searchID={searchID}
+        refresh={refresh}
       />
     </>
   );

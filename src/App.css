@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+
 body {
+  font-family: "poppins";
   background-color: #F0DAC5;
   /* background-image: url(https://cdn.99images.com/photos/wallpapers/artist/artist%20android-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-ttaeu.jpg); */
   position: relative;

@@ -35,16 +35,18 @@ const Signup = ({ isNotSigned, signS, unlog, unSign }) => {
       <br />
       <label>Email:</label>
       <input
-        type="text"
+        type="mail"
         value={mailSign}
+        required
         placeholder="example@example.com..."
         onChange={(e) => setMailSign(e.target.value)}
       />
       <br />
       <label>Password: </label>
       <input
-        type="text"
+        type="password"
         value={passSign}
+        required
         placeholder="pass123..."
         onChange={(e) => setPassSign(e.target.value)}
       />

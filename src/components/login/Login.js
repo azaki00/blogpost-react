@@ -33,6 +33,7 @@ const Login = ({ logg, unlog, isNotLogged, unSign }) => {
         <input
           type="email"
           value={mail}
+          required
           onChange={(e) => setMail(e.target.value)}
           placeholder="user@gmail.com..."
         />
@@ -40,8 +41,9 @@ const Login = ({ logg, unlog, isNotLogged, unSign }) => {
         <label>Password</label>
         <br />
         <input
-          type="text"
+          type="password"
           value={pass}
+          required
           onChange={(e) => setPass(e.target.value)}
           placeholder="pass123..."
         />
