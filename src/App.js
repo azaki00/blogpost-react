@@ -172,8 +172,9 @@ function App() {
 
   const refresh=()=>{
     if(controlPost != null){
-      setControlPost(null);
       setPosts(controlPost);
+      setControlPost(null);
+      
     }
   }
 
