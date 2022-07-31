@@ -1,10 +1,14 @@
 import React from "react";
 import "./login.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useCallback } from "react";
 
-const Login = ({ logg, unlog, isNotLogged, unSign }) => {
+const Login = ({ isNotSigned, unlog, isNotLogged, unSign, users, setUserIn}) => {
   const [mail, setMail] = useState("");
   const [pass, setPass] = useState("");
+  const navigate = useNavigate();
+  const handleOnClick = useCallback(() => navigate('/main', {replace: true}), [navigate]);
 
   const enter = (e) => {
     e.preventDefault();
@@ -19,6 +23,25 @@ const Login = ({ logg, unlog, isNotLogged, unSign }) => {
     console.log("clicked to sign up");
     unlog();
     unSign();
+  };
+
+  const logg = (m, p) => {
+    for (var i = 0; i < users?.length; i++) {
+      if (users[i].mail == m && users[i].pass == p) {
+        setUserIn({ mail: users[i].mail, pass: users[i].pass });
+        alert("Succesfully logged in!");
+        handleOnClick();
+        if (isNotSigned) {
+          unSign();
+        }
+
+        unlog();
+        console.log(isNotLogged);
+
+        return;
+      }
+    }
+    alert("This user is not found! Please sign up!");
   };
 
   return (

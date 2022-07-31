@@ -6,24 +6,24 @@
   border-radius: 10px;
   width: 90%;
   height: 70vh;
-  transform: translateY(-400px);
-  opacity: 0;
-  pointer-events: none;
-  transition: ease-in-out 0.3s;
+  /* transform: translateY(-400px); */
+  opacity: 1;
+  pointer-events: all;
+  transition: ease-in-out 0.4s;
   margin: auto;
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  overflow-y: scroll;
+
   background-image: linear-gradient(to right, #136a8a,#267871);
 }
-
+/* 
 .mainpage--show {
   
   opacity: 1;
   pointer-events: all;
-}
+} */
 
 .cardCont {
   width: 25%;
@@ -38,8 +38,10 @@
   margin-top: 10px;
   margin-right: 10px;
   width: 70%;
-  height: fit-content;
+  height: 65vh;
   border: 1px solid black;
+
+  overflow-y: scroll;
   /* transform: translateY(-20vh); */
 }
 

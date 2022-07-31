@@ -16,7 +16,7 @@ const MainPage = ({ showCard, userIn, posts, addP, unPost, isNotAddPost, filterI
   // };
 
   return (
-    <div className={`mainpage ${showCard ? "mainpage--show" : ""}`}>
+    <div className="mainpage">
       
       <div className="cardCont">
         <UserCard userIn={userIn} />

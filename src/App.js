@@ -4,9 +4,14 @@ import Login from "./components/login/Login";
 import Signup from "./components/signup/Signup";
 import Header from "./components/Header";
 import MainPage from "./components/MainPage/MainPage";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
 function App() {
+
+
+
+
   const [users, setUsers] = useState([
     { mail: "user@user", pass: "123" },
     { mail: "user2@user", pass: "1234" },
@@ -14,7 +19,7 @@ function App() {
     { mail: "user4@user", pass: "123456" },
   ]);
 
-  const [controlPost,setControlPost] = useState();
+  const [controlPost, setControlPost] = useState();
   const [posts, setPosts] = useState([
     {
       author: "x@x",
@@ -65,15 +70,11 @@ function App() {
 
   const [userIn, setUserIn] = useState({ mail: "", pass: "" });
 
-
-
   const [isNotAddPost, setIsNotAddPost] = useState(false);
 
   const unPost = () => {
     setIsNotAddPost((prevState) => !prevState);
   };
-
-
 
   const unlog = () => {
     setIsNotLogged((prevState) => !prevState);
@@ -104,25 +105,9 @@ function App() {
     console.log(isNotSigned);
   };
 
-  const logg = (m, p) => {
-    for (var i = 0; i < users.length; i++) {
-      if (users[i].mail == m && users[i].pass == p) {
-        setUserIn({ mail: users[i].mail, pass: users[i].pass });
-        alert("Succesfully logged in!");
-        if (isNotSigned) {
-          unSign();
-        }
 
-        unlog();
-        console.log(isNotLogged);
 
-        return;
-      }
-    }
-    alert("This user is not found! Please sign up!");
-  };
-
-  const addP = (x,y) => {
+  const addP = (x, y) => {
     // console.log(x);
     // console.log(y);
     const id = Math.floor(Math.random() * 10000) + 1;
@@ -144,65 +129,83 @@ function App() {
     unPost();
   };
 
-  const filterID=() =>{
-    const newfil = [...posts].sort((a,b) => b.postID-a.postID)
+  const filterID = () => {
+    const newfil = [...posts].sort((a, b) => b.postID - a.postID);
     setPosts(newfil);
-  }
+  };
 
-  const fl=() =>{
-    const contt = [...posts].sort((a,b) => b.likes-a.likes)
+  const fl = () => {
+    const contt = [...posts].sort((a, b) => b.likes - a.likes);
     setPosts(contt);
-  }
+  };
 
   const logOut = () => {
-    const x = {mail: "", pass: ""};
+    const x = { mail: "", pass: "" };
     setUserIn(x);
     unlog();
-  }
+  };
 
-  const searchID=(id)=>{
+  const searchID = (id) => {
     setControlPost(posts);
-    setPosts(posts.filter(man => man.postID == id));
-  }
+    setPosts(posts.filter((man) => man.postID == id));
+  };
 
-  const refresh=()=>{
-    if(controlPost != null){
+  const refresh = () => {
+    if (controlPost != null) {
       setPosts(controlPost);
       setControlPost(null);
-      
     }
-  }
+  };
+
+
 
 
   return (
     <>
-      <Header />
-      <Login
-        isNotLogged={isNotLogged}
-        unlog={unlog}
-        logg={logg}
-        unSign={unSign}
-      />
-      <Signup
-        signS={signS}
-        unSign={unSign}
-        unlog={unlog}
-        isNotSigned={isNotSigned}
-      />
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Login
+                  isNotLogged={isNotLogged}
+                  unlog={unlog}
+                  unSign={unSign}
+                  users={users}
+                  setUserIn={setUserIn}
+                  isNotSigned={isNotSigned}
+                />{" "}
+                <Signup
+                  signS={signS}
+                  unSign={unSign}
+                  unlog={unlog}
+                  isNotSigned={isNotSigned}
+                />{" "}
+              </>
+            }
+          ></Route>
 
-      <MainPage
-
-        userIn={userIn}
-        posts={posts}
-        addP={addP}
-        unPost={unPost}
-        isNotAddPost={isNotAddPost}
-        filterID={filterID}
-        fl={fl}
-        logOut={logOut}
-        searchID={searchID}
-        refresh={refresh}
-      />
+          <Route
+            path="/main"
+            element={
+              <MainPage
+                userIn={userIn}
+                posts={posts}
+                addP={addP}
+                unPost={unPost}
+                isNotAddPost={isNotAddPost}
+                filterID={filterID}
+                fl={fl}
+                logOut={logOut}
+                searchID={searchID}
+                refresh={refresh}
+              />
+            }
+          ></Route>
+        </Routes>
+      </Router>
     </>
   );
 }
