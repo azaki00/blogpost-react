@@ -65,7 +65,7 @@ function App() {
 
   const [userIn, setUserIn] = useState({ mail: "", pass: "" });
 
-  const [showCard, setShowCard] = useState(false);
+
 
   const [isNotAddPost, setIsNotAddPost] = useState(false);
 
@@ -73,9 +73,7 @@ function App() {
     setIsNotAddPost((prevState) => !prevState);
   };
 
-  const unCard = () => {
-    setShowCard((prevState) => !prevState);
-  };
+
 
   const unlog = () => {
     setIsNotLogged((prevState) => !prevState);
@@ -102,7 +100,6 @@ function App() {
     setUsers([...users, controlUser]);
     alert("Succesfully signed up!");
     unSign();
-    unCard();
 
     console.log(isNotSigned);
   };
@@ -118,7 +115,6 @@ function App() {
 
         unlog();
         console.log(isNotLogged);
-        unCard();
 
         return;
       }
@@ -161,7 +157,6 @@ function App() {
   const logOut = () => {
     const x = {mail: "", pass: ""};
     setUserIn(x);
-    unCard();
     unlog();
   }
 
@@ -196,7 +191,7 @@ function App() {
       />
 
       <MainPage
-        showCard={showCard}
+
         userIn={userIn}
         posts={posts}
         addP={addP}
